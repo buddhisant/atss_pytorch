@@ -10,3 +10,39 @@
 **backbone网络基于resnet50**
 
 **请确保已经安装pycocotools以及1.1.0版本以上的pytorch**
+
+# 性能
+在rtx 2080ti上的推理速度为17.8fps
+
+# 使用方法：
+- git clone https://github.com/buddhisant/atss_pytorch.git
+- cd atss_pytorch
+- mkdir pretrained
+- cd pretrained
+- wget https://download.pytorch.org/models/resnet50-19c8e357.pth -O resnet50_pytorch.pth
+- wget https://download.pytorch.org/models/resnet101-5d3b4d8f.pth -O resnet101_pytorch.pth
+- cd ..
+- mkdir data
+- cd data
+- mkdir coco
+- cd ../..
+- python setup.py build_ext develop
+
+将coco数据集放在./data/coco下面
+
+# 训练
+如果你的设备有多个显卡，请使用分布式训练，例如你的设备有2个显卡，请采用命令
+- python -m torch.distributed.launch --nproc_per_node=2 --master_port=$((RANDOM+10000)) train.py
+
+如果你的设备只有一个显卡，请采用普通的训练，请采用命令
+- python train.py
+
+# 测试
+测试只支持单卡,请采用命令
+- python test.py
+
+# 当你不再使用该程序时
+可以使用如下命令，恢复你的python环境
+- pip uninstall atss-cuda -y
+
+如有技术问题可联系qq 1401997998
