@@ -17,7 +17,7 @@
 |:-:|:-:|:-:|
 |atss| 39.4 | 17.43 |
 |mmdetection对应配置|39.4| 17.9 |
-
+测试在rtx2080ti上进行
 
 # 使用方法：
 - git clone https://github.com/buddhisant/atss_pytorch.git
