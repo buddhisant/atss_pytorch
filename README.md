@@ -12,10 +12,12 @@
 **请确保已经安装pycocotools以及1.1.0版本以上的pytorch**
 
 # 性能
+![测试结果](https://raw.githubusercontent.com/buddhisant/atss_pytorch/main/atss.png)
 |  | map | 推理速度 |
 |:-:|:-:|:-:|
 |atss| 39.4 | 17.43 |
 |mmdetection对应配置|39.4| 17.9 |
+
 
 # 使用方法：
 - git clone https://github.com/buddhisant/atss_pytorch.git
