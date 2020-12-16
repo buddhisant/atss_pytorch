@@ -5,7 +5,9 @@
 
 **支持多卡分布式训练**
 
-**更多目标检测代码请参见[友好型的object detection代码实现和论文解读](https://blog.csdn.net/gongyi_yf/article/details/109660890)**
+**更多目标检测代码请参见[友好型的object detection代码实现和论文解读 汇总](https://blog.csdn.net/gongyi_yf/article/details/109660890)**
+
+**ATSS的论文解读请参见[博文](https://blog.csdn.net/gongyi_yf/article/details/111231659)**
 
 **backbone网络基于resnet50**
 
