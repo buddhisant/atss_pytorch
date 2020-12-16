@@ -117,16 +117,15 @@ def main():
     parser=argparse.ArgumentParser(description="ATSS")
     parser.add_argument("--local_rank", type=int, default=0)
     parser.add_argument("--start_epoch", type=int, default=1)
-    gpu_nums=torch.cuda.device_count()
-    is_dist = gpu_nums>=1
+    parser.add_argument("--dist",action="store_true")
 
     args=parser.parse_args()
-    if(is_dist):
+    if(args.dist):
         torch.cuda.set_device(args.local_rank)
         dist.init_process_group(backend="nccl", init_method="env://")
         utils.synchronize()
 
-    train(is_dist,args.start_epoch, args.local_rank)
+    train(args.dist,args.start_epoch, args.local_rank)
 
 if __name__=="__main__":
     main()
