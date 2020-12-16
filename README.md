@@ -40,7 +40,7 @@
 
 # 训练
 如果你的设备有多个显卡，请使用分布式训练，例如你的设备有2个显卡，请采用命令
-- python -m torch.distributed.launch --nproc_per_node=2 --master_port=$((RANDOM+10000)) train.py
+- python -m torch.distributed.launch --nproc_per_node=2 --master_port=$((RANDOM+10000)) train.py --dist
 
 如果你的设备只有一个显卡，请采用普通的训练，请采用命令
 - python train.py
