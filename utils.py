@@ -67,7 +67,7 @@ def compute_iou_xyxy(bboxes1,bboxes2):
     area2 = (bboxes2[..., 2] - bboxes2[..., 0]) * (bboxes2[..., 3] - bboxes2[..., 1])
 
     union_area = area1 + area2 - inter_area
-    ious = (inter_area + 1) / (union_area + 1)
+    ious = inter_area / (union_area + 1)
 
     return ious
 
